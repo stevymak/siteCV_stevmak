@@ -59,6 +59,7 @@ if (isset($_GET['id_experience'])){
                                 <tbody>
                                     <tr>
                                         <th>Poste</th>
+                                        <th>Entreprise</th>
                                         <th>Date</th>
                                         <th>Description</th>
                                         <th>Modifier</th>

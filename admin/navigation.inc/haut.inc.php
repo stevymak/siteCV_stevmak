@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    $sql = $pdocv->query("SELECT * FROM t_utilisateurs WHERE id_utilisateur ='1'");
+    $sql = $pdocv->query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1'");
     $ligne = $sql->fetch();
      ?>
     <meta charset="utf-8">
@@ -108,38 +108,21 @@ echo $date ." ". $heure;?></a>
                         </li>
                     </ul>
                 </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
                         <li>
                             <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
                         </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
                     </ul>
                 </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo " " . $ligne['prenom'].' '.$ligne['nom'] ; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="profil.php"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -157,7 +140,7 @@ echo $date ." ". $heure;?></a>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de Bord </a>
                     </li>
                     <li>
@@ -176,9 +159,6 @@ echo $date ." ". $heure;?></a>
                         <a href="bootstrap-elements.php"><i class="fa fa-fw fa-desktop"></i> Elements Bootstrap </a>
                     </li>
                     <li>
-                        <a href="bootstrap-grid.php"><i class="fa fa-fw fa-wrench"></i> Grilles Bootstrap </a>
-                    </li>
-                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -188,9 +168,6 @@ echo $date ." ". $heure;?></a>
                                 <a href="#">Dropdown Item</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> Page Blanche </a>
                     </li>
                 </ul>
             </div>

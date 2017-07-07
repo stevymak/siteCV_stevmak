@@ -39,7 +39,7 @@ if (isset($_GET['id_competence'])){
                             Compétences
                         </h1>
                         <br>
-                        <p>Il y a <?php echo $nbr_competences; ?> compétences dans la table pour <?php echo $ligne['pseudo']; ?></p>
+                        <p>Il y a <?php echo $nbr_competences; ?> Compétences dans la table pour <?php echo $ligne['pseudo']; ?></p>
                         <br>
                         <ol class="breadcrumb">
                             <li>
@@ -59,9 +59,9 @@ if (isset($_GET['id_competence'])){
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th>compétences</th>
-                                        <th>modifier</th>
-                                        <th>supprimer</th>
+                                        <th>Compétences</th>
+                                        <th>Modifier</th>
+                                        <th>Supprimer</th>
                                     </tr>
                                     <tr>
                                         <?php while ($ligne_competence = $sql->fetch()) { ?>

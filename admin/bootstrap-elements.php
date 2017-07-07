@@ -1,3 +1,4 @@
+<?php require '../connexion/connexion.php'; ?>
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
 
         <div id="page-wrapper">

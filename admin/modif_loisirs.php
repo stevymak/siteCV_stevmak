@@ -25,32 +25,10 @@ if (isset($_GET['id_loisir'])){
 
             <div class="container-fluid">
 
-                <!-- Page Heading -->
                 <div class="row">
-                <?php
-                    $sql = $pdocv->prepare("SELECT * FROM t_loisirs WHERE utilisateur_id = '1'");
-                    $sql->execute();
-                    $nbr_loisir = $sql->rowCount();
-                ?>
 
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Loisirs
-                        </h1>
-                        <br>
-                        <p>Il y a <?php echo $nbr_loisir; ?> loisirs dans la table pour <?php echo $ligne['pseudo']; ?></p>
-                        <br>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php"> Tableau de Bord </a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-table"></i> Loisirs
-                            </li>
-                        </ol>
-                    </div>
                 </div>
-                <!-- /.row -->
+
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="table-responsive">
