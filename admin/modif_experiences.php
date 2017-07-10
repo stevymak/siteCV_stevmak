@@ -1,23 +1,20 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php
 
-        if (isset($_POST['titre_e'])) {
-            if($_POST['titre_e']!=''){
-                $experience = addslashes($_POST['titre_e']);
+if (isset($_POST['titre_e'])) {
+    if($_POST['titre_e']!=''){
+        $experience = addslashes($_POST['titre_e']);
+        $e_experience = addslashes($_POST['sous_titre_e']);
+        $dates_experiences = addslashes($_POST['dates_e']);
+        $description_experiences = addslashes($_POST['description_e']);
 
-                $pdocv->exec("INSERT INTO t_experiencess VALUES (NULL, '$experiences' , '1')");
-                header("location: ../admin/experiences.php");
-                exit();
-            }
+        $pdocv->exec("UPDATE t_experiences SET champ_titre_e = '$experience' , champ_sous_titre_e = '$e_experience' , champ_dates_e = '$dates_experiences' , champ_description_e = '$description_experiences' WHERE id_experience = '$id_experience')");
+        header("location: ../admin/experiences.php");
+        exit();
+    }
 
-        }
-
-if (isset($_GET['id_experience'])){
-    $eraser = $_GET['id_experience'];
-    $sql = "DELETE FROM t_experiences WHERE id_experience = '$eraser'";
-    $pdocv->query($sql);
-    header("location: ../admin/experiences.php");
 }
+
 ?>
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
 
@@ -58,16 +55,19 @@ if (isset($_GET['id_experience'])){
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <th>experiences</th>
-                                        <th>modifier</th>
-                                        <th>supprimer</th>
+                                        <th>Poste</th>
+                                        <th>Entreprise</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Modifier</th>
+                                        <th>Supprimer</th>
                                     </tr>
                                     <tr>
                                         <?php while ($ligne_experience = $sql->fetch()) { ?>
                                         <td><?php echo $ligne_experience['titre_e']; ?></td>
                                         <td><?php echo $ligne_experience['sous_titre_e']; ?></td>
-                                        <td><?php echo $ligne_experience['description_e']; ?></td>
                                         <td><?php echo $ligne_experience['dates_e']; ?></td>
+                                        <td><?php echo $ligne_experience['description_e']; ?></td>
                                         <td><a href="modif_experiences.php?id_experience=<?php echo
                                         $ligne_experience['id_experience']; ?>"><i class="glyphicon glyphicon-pencil pull-right"></i></a></td>
                                         <td><a href="experiences.php?id_experience=<?php echo
@@ -84,19 +84,32 @@ if (isset($_GET['id_experience'])){
                 <br>
                 <br>
 
-            <div class="row">
-
-                <form class="form-group" action="experiences.php" method="post">
-                    <div class="text-center col-md-12">
-                        <h1>Ajouter une experience</h1>
+                <div class="row">
+                    <form class="form-group" action="experiences.php" method="post">
+                        <div class="text-center col-md-12">
+                        <h1>Formulaire de mise à jour de l'experience</h1>
                     </div>
-                    <div class="form-group">
-                        <label>Experiences</label>
-                        <input required id="experience" name="experience" type="text" class="form-control" style="width:200px;">
-                    </div>
-                    <button type="submit" class="btn btn-default">Ajouter</button>
-                </form>
-            </div>
+                        <div class="form-group">
+                            <label for="titre_e">Poste</label>
+                            <input id="titre_e" type="text" name="titre_e" class="form-control" style="width:200px;" value="<?php
+                            echo $ligne_experience['titre_e']; ?>">
+                            <label for="sous_titre_e">Entreprise</label>
+                            <input id="sous_titre_e" type="text" name="sous_titre_e" class="form-control" style="width:200px;" value="<?php
+                            echo $ligne_experience['sous_titre_e']; ?>">
+                            <label>Date</label>
+                            <input id="dates_e" type="date" name="dates_e" class="form-control" style="width:200px;" value="<?php
+                            echo $ligne_experience['dates_e']; ?>">
+                            <br>
+                            <label>Description</label>
+                            <br>
+                            <input id="description_e" type="text" name="description_e" class="form-control" rows="8" cols="40" value="<?php
+                            echo $ligne_experience['description_e']; ?>">
+                            <input hidden name="id_experience" value="<?php echo
+                            $ligne_competence['id_experience']; ?>">
+                        </div>
+                        <input type="submit" value="Mettre à jour" class="btn btn-primary btn-lg" style="margin-top:10px;">
+                    </form>
+                </div>
 
                 <!-- /.row -->
 

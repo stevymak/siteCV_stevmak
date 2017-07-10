@@ -156,9 +156,6 @@
                         <a href="competences.php"><i class="fa fa-fw fa-table"></i> Competences</a>
                     </li>
                     <li>
-                        <a href="forms.php"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
-                    <li>
                         <a href="bootstrap-elements.php"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>
                     <li class="active">

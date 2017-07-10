@@ -3,10 +3,15 @@
 
         if (isset($_POST['titre_e'])) {
             if($_POST['titre_e']!=''){
-                $experiences = addslashes($_POST['titre_e']);
+                $experience = addslashes($_POST['titre_e']);
+                $e_experience = addslashes($_POST['sous_titre_e']);
+                $dates_experiences = addslashes($_POST['dates_e']);
+                $description_experiences = addslashes($_POST['description_e']);
 
                 $pdocv->exec("INSERT INTO t_experiences VALUES (NULL , '$experience' , '$e_experience' , '$dates_experiences' , '$description_experiences' , '1')");
+
                 header("location: ../admin/experiences.php");
+                
                 exit();
             }
 
@@ -69,8 +74,8 @@ if (isset($_GET['id_experience'])){
                                         <?php while ($ligne_experience = $sql->fetch()) { ?>
                                         <td><?php echo $ligne_experience['titre_e']; ?></td>
                                         <td><?php echo $ligne_experience['sous_titre_e']; ?></td>
-                                        <td><?php echo $ligne_experience['description_e']; ?></td>
                                         <td><?php echo $ligne_experience['dates_e']; ?></td>
+                                        <td><?php echo $ligne_experience['description_e']; ?></td>
                                         <td><a href="modif_experiences.php?id_experience=<?php echo
                                         $ligne_experience['id_experience']; ?>">
                                         <i class="glyphicon glyphicon-pencil pull-right"></i></a></td>

@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -132,7 +138,7 @@ echo $date ." ". $heure;?></a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="auth.php?action=deconnexion"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -150,24 +156,10 @@ echo $date ." ". $heure;?></a>
                         <a href="experiences.php"><i class="fa fa-fw fa-table"></i> Experiences </a>
                     </li>
                     <li>
-                        <a href="forms.php"><i class="fa fa-fw fa-edit"></i> Formulaire </a>
-                    </li>
-                    <li>
                         <a href="loisirs.php"><i class="glyphicon glyphicon-tower"></i> Loisirs </a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.php"><i class="fa fa-fw fa-desktop"></i> Elements Bootstrap </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </div>

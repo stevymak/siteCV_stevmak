@@ -64,21 +64,6 @@
                     </form>
                 </div>
 
-            <div class="row">
-
-                <form class="form-group" action="competences.php" method="post">
-                    <div class="text-center col-md-12">
-                        <h1>Insertion d'une compétence</h1>
-                    </div>
-                    <div class="form-group">
-                        <label>Compétence</label>
-                        <input required id="competence" name="competence" type="text" class="form-control" style="width:200px;">
-                        <p class="help-block">Exemple : Html,Css...</p>
-                    </div>
-                    <button type="submit" class="btn btn-default">Ajouter</button>
-                </form>
-            </div>
-
                 <!-- /.row -->
 
             </div>
