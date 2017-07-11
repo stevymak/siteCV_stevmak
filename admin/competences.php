@@ -68,7 +68,7 @@ if (isset($_GET['id_competence'])){
                                         <td><?php echo $ligne_competence['competence']; ?></td>
                                         <td><a href="modif_competences.php?id_competence=<?php echo
                                         $ligne_competence['id_competence']; ?>"><i class="glyphicon glyphicon-pencil pull-right"></i></a></td>
-                                        <td><a href="competences.php?id_competence=<?php echo
+                                        <td><a class="suppr" href="competences.php?id_competence=<?php echo
                                         $ligne_competence['id_competence']; ?>">
                                         <i class="glyphicon glyphicon-trash pull-right"></i></a></td>
                                     </tr>
@@ -89,7 +89,7 @@ if (isset($_GET['id_competence'])){
                         <h1>Insertion d'une compétence</h1>
                     </div>
                     <div class="form-group">
-                        <label>Compétences</label>
+                        <label for="competence">Compétences</label>
                         <input required id="competence" name="competence" type="text" class="form-control" style="width:200px;">
                         <p class="help-block">Exemple : Html,Css...</p>
                     </div>
@@ -114,6 +114,9 @@ if (isset($_GET['id_competence'])){
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <script src="js/index.js" type="text/javascript">
+
+    </script>
 </body>
 
 </html>

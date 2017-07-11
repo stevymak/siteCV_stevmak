@@ -3,7 +3,7 @@
     session_start();
 
  ?>
- 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -151,6 +151,9 @@ echo $date ." ". $heure;?></a>
                     </li>
                     <li>
                         <a href="competences.php"><i class="fa fa-fw fa-table"></i> Competences</a>
+                    </li>
+                    <li>
+                        <a href="formations.php"><i class="glyphicon glyphicon-tower"></i> Formations </a>
                     </li>
                     <li>
                         <a href="experiences.php"><i class="fa fa-fw fa-table"></i> Experiences </a>

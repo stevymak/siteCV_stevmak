@@ -7,11 +7,12 @@
                 $e_experience = addslashes($_POST['sous_titre_e']);
                 $dates_experiences = addslashes($_POST['dates_e']);
                 $description_experiences = addslashes($_POST['description_e']);
+                $id_experience = $_POST['id_experience'];
 
                 $pdocv->exec("INSERT INTO t_experiences VALUES (NULL , '$experience' , '$e_experience' , '$dates_experiences' , '$description_experiences' , '1')");
 
                 header("location: ../admin/experiences.php");
-                
+
                 exit();
             }
 
@@ -100,16 +101,19 @@ if (isset($_GET['id_experience'])){
                         <h1>Ajouter une experience</h1>
                     </div>
                     <div class="form-group">
-                        <label>Poste</label>
+                        <label for="titre_e">Poste</label>
                         <input required id="titre_e" name="titre_e" type="text" class="form-control" style="width:200px;">
-                        <label>Entreprise</label>
+                        <label for="sous_titre_e">Entreprise</label>
                         <input required id="sous_titre_e" name="sous_titre_e" type="text" class="form-control" style="width:200px;">
-                        <label>Date</label>
+                        <label for="dates_e">Date</label>
                         <input required id="dates_e" name="dates_e" type="date" class="form-control" style="width:200px;">
                         <br>
-                        <label>Description</label>
+                        <label for="description_e">Description</label>
                         <br>
                         <textarea name="description_e" id="description_e" rows="8" cols="40"></textarea>
+                        <input hidden name="id_experience" value="<?php echo
+                        $ligne_experience['id_experience']; ?>">
+
                     </div>
                     <button type="submit" class="btn btn-default">Ajouter</button>
                 </form>
@@ -131,6 +135,9 @@ if (isset($_GET['id_experience'])){
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <script> CKEDITOR.replace( 'description_e' ); </script>
 
 </body>
 

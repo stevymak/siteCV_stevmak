@@ -177,6 +177,9 @@ echo $date ." ". $heure;?></a>
                         <a href="competences.php"><i class="fa fa-fw fa-table"></i> Competences</a>
                     </li>
                     <li>
+                        <a href="formations.php"><i class="fa fa-fw fa-table"></i> Formations </a>
+                    </li>
+                    <li>
                         <a href="experiences.php"><i class="fa fa-fw fa-table"></i> Experiences</a>
                     </li>
                     <li>
@@ -302,6 +305,39 @@ echo $date ." ". $heure;?></a>
                                 </div>
                             </div>
                             <a href="loisirs.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Plus de Détails</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <?php
+                            $sql = $pdocv->prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
+                            $sql->execute();
+                            $nbr_formations = $sql->rowCount();
+                        ?>
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <span class="badge">
+                                        <?php echo $nbr_formations; ?>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div>Formations</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="formations.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Plus de Détails</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
