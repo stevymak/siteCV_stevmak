@@ -1,5 +1,6 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php
+        var_dump($_POST);
 
         if (isset($_POST['titre_f'])) {
                 $titre_f = addslashes($_POST['titre_f']);
@@ -7,7 +8,6 @@
                 $date_f = addslashes($_POST['date_f']);
                 $description_f = addslashes($_POST['description_f']);
                 $id_formation = $_POST['id_formation'];
-
 
                 $pdocv->exec("UPDATE t_formations SET titre_f = '$titre_f', sous_titre_f = '$sous_titre_f', date_f = '$date_f', description_f = '$description_f' WHERE id_formation = '$id_formation'");
 
@@ -70,10 +70,10 @@
                             <br>
                             <label for="description_f">Description</label>
                             <br>
-                            <input id="description_f" type="text" name="description_f" class="form-control" value="<?php
-                            echo $ligne_formation['description_f']; ?>">
+                            <textarea id="description_f" type="text" name="description_f" class="ckeditor form-control" value="<?php
+                            echo $ligne_formation['description_f']; ?>"></textarea>
                             <input hidden name="id_formation" value="<?php echo
-                            $ligne_formations['id_formation']; ?>">
+                            $ligne_formation['id_formation']; ?>">
                         </div>
                         <input type="submit" value="Mettre à jour" class="btn btn-primary btn-lg" style="margin-top:10px;">
                     </form>

@@ -25,6 +25,22 @@
 
             <div class="container-fluid">
 
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Experiences
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.php">Tableau de Bord</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-table"></i> Experiences
+                            </li>
+                        </ol>
+                    </div>
+                </div>
 
                 <br>
                 <br>
@@ -47,8 +63,8 @@
                             <br>
                             <label for="description_e">Description</label>
                             <br>
-                            <input id="description_e" type="text" name="description_e" class="form-control" rows="8" cols="40" value="<?php
-                            echo $ligne_experience['description_e']; ?>">
+                            <textarea id="description_e" type="text" name="description_e" class="form-control" rows="8" cols="40" value="<?php
+                            echo $ligne_experience['description_e']; ?>"></textarea>
                             <input hidden name="id_experience" value="<?php echo
                             $ligne_experience['id_experience']; ?>">
                         </div>
