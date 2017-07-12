@@ -3,13 +3,13 @@
 
         if (isset($_POST['titre_e'])) {
             if($_POST['titre_e']!=''){
-                $experience = addslashes($_POST['titre_e']);
-                $e_experience = addslashes($_POST['sous_titre_e']);
-                $dates_experiences = addslashes($_POST['dates_e']);
-                $description_experiences = addslashes($_POST['description_e']);
+                $titre_e = addslashes($_POST['titre_e']);
+                $sous_titre_e = addslashes($_POST['sous_titre_e']);
+                $dates_e = addslashes($_POST['dates_e']);
+                $description_e = addslashes($_POST['description_e']);
                 $id_experience = $_POST['id_experience'];
 
-                $pdocv->exec("INSERT INTO t_experiences VALUES (NULL , '$experience' , '$e_experience' , '$dates_experiences' , '$description_experiences' , '1')");
+                $pdocv->exec("INSERT INTO t_experiences VALUES (NULL , '$titre_e' , '$sous_titre_e' , '$dates_e' , '$description_e' , '1')");
 
                 header("location: ../admin/experiences.php");
 
@@ -98,7 +98,7 @@ if (isset($_GET['id_experience'])){
 
                 <form class="form-group" action="experiences.php" method="post">
                     <div class="text-center col-md-12">
-                        <h1>Ajouter une experience</h1>
+                        <h1>Ajouter une expérience</h1>
                     </div>
                     <div class="form-group">
                         <label for="titre_e">Poste</label>

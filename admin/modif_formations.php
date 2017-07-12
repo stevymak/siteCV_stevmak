@@ -2,25 +2,25 @@
 <?php
 
         if (isset($_POST['titre_f'])) {
-            if($_POST['titre_f']!=''){
-                $formation = addslashes($_POST['titre_f']);
-                $f_formation = addslashes($_POST['sous_titre_f']);
-                $date_formation = addslashes($_POST['date_f']);
-                $description_formation = addslashes($_POST['description_f']);
+                $titre_f = addslashes($_POST['titre_f']);
+                $sous_titre_f = addslashes($_POST['sous_titre_f']);
+                $date_f = addslashes($_POST['date_f']);
+                $description_f = addslashes($_POST['description_f']);
                 $id_formation = $_POST['id_formation'];
 
-                $pdocv->exec('UPDATE t_formations SET titre_f="'.$_POST['titre_f'].'", sous_titre_f="'.$_POST['sous_titre_f'].'", date_f="'.$_POST['date_f'].'", description_f="'.$_POST['description_f'].'"');
+
+                $pdocv->exec("UPDATE t_formations SET titre_f = '$titre_f', sous_titre_f = '$sous_titre_f', date_f = '$date_f', description_f = '$description_f' WHERE id_formation = '$id_formation'");
 
                 header("location: ../admin/formations.php");
 
                 exit();
             }
 
-        }
-
         $id_formation = $_GET['id_formation'];
-        $sql = $pdocv->query("SELECT * FROM t_formations WHERE id_formation = '$id_formation' ");
+        $sql = $pdocv->query("SELECT * FROM t_formations WHERE id_formation = '$id_formation'");
         $ligne_formation = $sql->fetch();
+
+
 
 ?>
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
@@ -53,7 +53,7 @@
                 <br>
 
                 <div class="row">
-                    <form class="form-group" action="modif_formations.php" method="post">
+                    <form class="form-group" action="" method="post">
                         <div class="text-center col-md-12">
                         <h1>Formulaire de mise à jour de Formation</h1>
                     </div>
@@ -70,7 +70,7 @@
                             <br>
                             <label for="description_f">Description</label>
                             <br>
-                            <input id="description_f" type="text" name="description_f" class="form-control" rows="8" cols="40" value="<?php
+                            <input id="description_f" type="text" name="description_f" class="form-control" value="<?php
                             echo $ligne_formation['description_f']; ?>">
                             <input hidden name="id_formation" value="<?php echo
                             $ligne_formations['id_formation']; ?>">

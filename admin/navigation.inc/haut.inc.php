@@ -1,7 +1,13 @@
 <?php
 
     session_start();
-
+        if (isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté') {
+                $id_utilisateur=$_SESSION['id_utilisateur'];
+                $prenom=$_SESSION['prenom'];
+                $nom=$_SESSION['nom'];
+        }else{
+            header('location:auth.php');
+        }
  ?>
 
 <!DOCTYPE html>

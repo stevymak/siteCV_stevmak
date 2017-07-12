@@ -3,13 +3,12 @@
 
         if (isset($_POST['titre_f'])) {
             if($_POST['titre_f']!=''){
-                $formation = addslashes($_POST['titre_f']);
-                $f_formation = addslashes($_POST['sous_titre_f']);
-                $date_formation = addslashes($_POST['date_f']);
-                $description_formation = addslashes($_POST['description_f']);
-                $id_formation = addslashes($_POST['id_formation']);
+                $titre_f = addslashes($_POST['titre_f']);
+                $sous_titre_f = addslashes($_POST['sous_titre_f']);
+                $date_f = addslashes($_POST['date_f']);
+                $description_f = addslashes($_POST['description_f']);
 
-                $pdocv->exec("INSERT INTO t_formations VALUES (NULL , '$formation' , '$f_formation' , '$date_formation' , '$description_formation' , '$id_formation')");
+                $pdocv->exec("INSERT INTO t_formations VALUES (NULL , '$titre_f' , '$sous_titre_f' , '$date_f' , '$description_f' , '1')");
 
                 header("location: ../admin/formations.php");
 
@@ -80,7 +79,7 @@ if (isset($_GET['id_formation'])){
                                         <td><a href="modif_formations.php?id_formation=<?php echo
                                         $ligne_formation['id_formation']; ?>">
                                         <i class="glyphicon glyphicon-pencil pull-right"></i></a></td>
-                                        <td><a href="formations.php?id_formation=<?php echo
+                                        <td><a class="suppr" href="formations.php?id_formation=<?php echo
                                         $ligne_formation['id_formation']; ?>">
                                         <i class="glyphicon glyphicon-trash pull-right"></i></a></td>
                                     </tr>

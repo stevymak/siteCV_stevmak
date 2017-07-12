@@ -1,24 +1,22 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php
 
-if (isset($_POST['titre_e'])) {
-    if($_POST['titre_e']!=''){
-        $experience = addslashes($_POST['titre_e']);
-        $e_experience = addslashes($_POST['sous_titre_e']);
-        $dates_experiences = addslashes($_POST['dates_e']);
-        $description_experiences = addslashes($_POST['description_e']);
-        $id_experience = $_POST['id_experience'];
+        if(isset($_POST['titre_e'])) {
+                $titre_e = addslashes($_POST['titre_e']);
+                $sous_titre_e = addslashes($_POST['sous_titre_e']);
+                $dates_e = addslashes($_POST['dates_e']);
+                $description_e = addslashes($_POST['description_e']);
+                $id_experience = $_POST['id_experience'];
 
-        $pdocv->exec('UPDATE t_experiences SET titre_e="'.$_POST['titre_e'].'", sous_titre_e="'.$_POST['sous_titre_e'].'", dates_e="'.$_POST['dates_e'].'", description_e="'.$_POST['description_e'].'", id_experience="'.$_POST['id_experience']);
-        // header("locaton: ../admin/experiences.php");
-        // exit();
-    }
+                $pdocv->exec("UPDATE t_experiences SET titre_e = '$titre_e', sous_titre_e = '$sous_titre_e', dates_e = '$dates_e', description_e = '$description_e' WHERE id_experience = '$id_experience'");
 
-}
+                header("location: ../admin/experiences.php");
 
-$id_experience = $_GET['id_experience'];
-$sql = $pdocv->query("SELECT * FROM t_experiences WHERE id_experience = '$id_experience'");
-$ligne_experience = $sql->fetch();
+                exit();
+            }
+            $id_experience = $_GET['id_experience'];
+            $sql = $pdocv->query("SELECT * FROM t_experiences WHERE id_experience = '$id_experience'");
+            $ligne_experience = $sql->fetch();
 
 ?>
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
@@ -32,12 +30,12 @@ $ligne_experience = $sql->fetch();
                 <br>
 
                 <div class="row">
-                    <form class="form-group" action="experiences.php" method="post">
+                    <form class="form-group" action="" method="post">
                         <div class="text-center col-md-12">
                         <h1>Formulaire de mise à jour de l'experience</h1>
                     </div>
                         <div class="form-group">
-                            <label for="experience">Poste</label>
+                            <label for="titre_e">Poste</label>
                             <input id="titre_e" type="text" name="titre_e" class="form-control" style="width:200px;" value="<?php
                             echo $ligne_experience['titre_e']; ?>">
                             <label for="sous_titre_e">Entreprise</label>

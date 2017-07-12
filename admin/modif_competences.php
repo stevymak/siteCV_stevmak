@@ -8,7 +8,6 @@
             header('location: ../admin/competences.php');
             exit();
     }
-    //
 
     $id_competence = $_GET['id_competence'];
     $sql = $pdocv->query("SELECT * FROM t_competences WHERE id_competence = '$id_competence' ");
