@@ -1,6 +1,5 @@
 <?php
 
-    session_start();
         if (isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté') {
                 $id_utilisateur=$_SESSION['id_utilisateur'];
                 $prenom=$_SESSION['prenom'];
@@ -122,27 +121,11 @@ echo $date ." ". $heure;?></a>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo " " . $ligne['prenom'].' '.$ligne['nom'] ; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="profil.php"><i class="fa fa-fw fa-user"></i> Profil</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
                         <li>
                             <a href="auth.php?action=deconnexion"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>

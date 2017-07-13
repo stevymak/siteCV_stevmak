@@ -27,8 +27,9 @@
 
         <div class="span8">
             <img src="" alt="">
-            <h3><?php echo $ligne['pseudo']." ".$ligne['nom']; ?></h3>
+            <h3><?php echo $ligne['prenom']." ".$ligne['nom']; ?></h3>
             <h6><?php echo $ligne['email']; ?></h6>
+            <h6></h6>
             <h6><?php echo $ligne['age']; ?> ans</h6>
             <h6><?php echo $ligne['adresse']." ".$ligne['code_postal'].", ".$ligne['ville'] ; ?></h6>
         </div>

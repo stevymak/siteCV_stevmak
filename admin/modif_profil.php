@@ -1,33 +1,30 @@
 <?php require '../connexion/connexion.php'; ?>
-<?php require '../admin/navigation.inc/haut.inc.php'; ?>
 <?php
 
-        if (isset($_POST['prenom']) && $_POST['mdp'] == $_POST['mdp2']) {
+        if (isset($_POST['prenom'])) {
                 $nom = addslashes($_POST['nom']);
                 $prenom = addslashes($_POST['prenom']);
                 $email = addslashes($_POST['email']);
                 $pseudo = addslashes($_POST['pseudo']);
                 $telephone = addslashes($_POST['telephone']);
+                $adresse = addslashes($_POST['adresse']);
                 $mdp = addslashes($_POST['mdp']);
-                $id_utilisateur = $_POST['id_utilisateur'];
+                $id_utilisateur = $_SESSION['id_utilisateur'];
 
-                $pdocv->exec("UPDATE t_utilisateurs SET nom = '$nom', prenom = '$prenom', email = '$email', pseudo = '$pseudo', telephone = '$telpehone', mdp = '$mdp'  WHERE id_utilisateur = '$id_utilisateur'");
+                $pdocv->exec("UPDATE t_utilisateurs SET nom = '$nom', prenom = '$prenom', email = '$email', pseudo = '$pseudo', telephone = '$telephone', adresse = '$adresse', mdp = '$mdp'  WHERE id_utilisateur = '$id_utilisateur'");
 
                 header("location: ../admin/profil.php");
 
                 exit();
             }
-            else {
-                echo "<div class='alert-danger'>Erreur dans le formulaire</div>";
-            }
 
 
-
-        $id_utilisateur = $_GET['id_utilisateur'];
+        $id_utilisateur = $_SESSION['id_utilisateur'];
         $sql = $pdocv->query("SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur'");
         $ligne_utilisateur = $sql->fetch();
 
 ?>
+<?php require '../admin/navigation.inc/haut.inc.php'; ?>
 <div id="page-wrapper">
 
     <?php
@@ -47,7 +44,7 @@
 
       <h3 class="text-center">Infos</h3>
       <br>
-      <form class="form-horizontal" role="form">
+      <form method="post" class="form-horizontal" role="form">
         <div class="form-group">
           <label class="col-lg-3 control-label">Nom:</label>
           <div class="col-lg-8">
@@ -76,6 +73,12 @@
           <label class="col-md-3 control-label">Numéro de Téléphone:</label>
           <div class="col-md-8">
             <input class="form-control" id="telephone" name="telephone" value="<?php echo $ligne['telephone']; ?>" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Adresse :</label>
+          <div class="col-md-8">
+            <input class="form-control" id="adresse" name="adresse" value="<?php echo $ligne['adresse']; ?>" type="text">
           </div>
         </div>
         <div class="form-group">

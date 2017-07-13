@@ -8,5 +8,5 @@ $passe=""; // mot de passe de l'utilisateur
 $pdocv= new PDO('mysql:host='.$hote.';dbname='.$bdd, $utilisateur, $passe);
 //$pdocv est le nom de la variable de la connexion qui sert partout ou l'on doit se servir de cette connexion
 $pdocv->exec("SET NAMES utf8");
-
+session_start();
 ?>
