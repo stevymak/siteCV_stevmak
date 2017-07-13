@@ -91,7 +91,6 @@ if (isset($_GET['id_competence'])){
                     <div class="form-group">
                         <label for="competence">Compétences</label>
                         <input required id="competence" name="competence" type="text" class="form-control" style="width:200px;">
-                        <p class="help-block">Exemple : Html,Css...</p>
                     </div>
                     <button type="submit" class="btn btn-default">Ajouter</button>
                 </form>
@@ -103,20 +102,5 @@ if (isset($_GET['id_competence'])){
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/index.js" type="text/javascript">
-
-    </script>
-</body>
-
-</html>
+<?php require "../admin/navigation.inc/bas.inc.php"; ?>

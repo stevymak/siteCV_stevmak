@@ -124,21 +124,5 @@ if (isset($_GET['id_formation'])){
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-
-    <script> CKEDITOR.replace( 'description_f' ); </script>
-
-</body>
-
-</html>
+<?php require "../admin/navigation.inc/bas.inc.php"; ?>

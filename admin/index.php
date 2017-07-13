@@ -174,7 +174,7 @@ echo $date ." ". $heure;?></a>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de Bord </a>
                     </li>
                     <li>
-                        <a href="competences.php"><i class="fa fa-fw fa-table"></i> Competences</a>
+                        <a href="competences.php"><i class="fa fa-fw fa-table"></i> Compétences</a>
                     </li>
                     <li>
                         <a href="formations.php"><i class="fa fa-fw fa-table"></i> Formations </a>
@@ -357,9 +357,15 @@ echo $date ." ". $heure;?></a>
                 <br>
                 <br>
 
-                <!-- /.row -->
+            <footer>
+                <nav class="navbar navbar-fixed-bottom navbar-default">
+                    <div class="container text-center" style="background-color:#222;height:50px;width:100%;">
+                        <?php echo date('Y') ?> - Tous droits reservés
+                    </div>
+                </nav>
+            </footer>
 
-            </div>
+        </div>
             <!-- /.container-fluid -->
 
         </div>
@@ -369,6 +375,7 @@ echo $date ." ". $heure;?></a>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
+
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

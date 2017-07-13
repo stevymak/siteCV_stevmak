@@ -1,5 +1,14 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
+<?php
+    if (isset($_GET['id_utilisateur'])){
+        $eraser = $_GET['id_utilisateur'];
+        $sql = "DELETE FROM t_utilisateurs WHERE id_utilisateur = '$eraser'";
+        $pdocv->query($sql);
+        header("location: ../admin/profil.php");
+    }
+
+?>
 
 <div id="page-wrapper">
 
@@ -9,28 +18,29 @@
      ?>
 
     <div class="container-fluid">
+        <br><br>
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="" class="img-circle">
+        </div>
 
-        <div class="row">
-            <h1><?php echo $ligne_profil['prenom']. ' ' .$ligne_profil['nom']; ?></h1>
+        <div class="span8">
+            <img src="" alt="">
+            <h3><?php echo $ligne['pseudo']." ".$ligne['nom']; ?></h3>
+            <h6><?php echo $ligne['email']; ?></h6>
+            <h6><?php echo $ligne['age']; ?> ans</h6>
+            <h6><?php echo $ligne['adresse']." ".$ligne['code_postal'].", ".$ligne['ville'] ; ?></h6>
         </div>
-        <br>
-        <div class="row">
-            <?php
-            $sql = $pdocv->query("SELECT * FROM t_titres_cv WHERE utilisateur_id = '1'");
-            $ligne_accroche = $sql->fetch();
-            ?>
-            <p><strong>Intitulé du Poste</strong></p>
-            <p><?php echo $ligne_accroche['accroche']. ' ' . $ligne_accroche['titre_cv']; ?></p>
-        </div>
-        <div class="row">
-            <?php
-            $sql = $pdocv->query("SELECT * FROM t_utilisateurs WHERE utilisateur_id = '1'");
-            $ligne_email = $sql->fetch();
-            ?>
-            <p><strong>Mail</strong></p>
-            <p><?php echo $ligne_email['email']; ?></p>
-        </div>
+
+        <button type="submit" class="btn btn-default"><a href="modif_profil.php?id_utilisateur=<?php echo
+        $ligne['id_utilisateur']; ?>">Modifier</a></button>
+
+</div>
+</div>
 
     </div>
 
 </div>
+
+<?php require "../admin/navigation.inc/bas.inc.php"; ?>

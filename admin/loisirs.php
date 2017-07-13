@@ -88,7 +88,6 @@ if (isset($_GET['id_loisir'])){
                     <div class="form-group">
                         <label>Loisirs</label>
                         <input required id="loisir" name="loisir" type="text" class="form-control" style="width:200px;">
-                        <p class="help-block">Exemple : Football, Basketball...</p>
                     </div>
                     <button type="submit" class="btn btn-default">Ajouter</button>
                 </form>
@@ -100,17 +99,5 @@ if (isset($_GET['id_loisir'])){
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
+<?php require "../admin/navigation.inc/bas.inc.php"; ?>

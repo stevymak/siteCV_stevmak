@@ -1,6 +1,5 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php
-        var_dump($_POST);
 
         if (isset($_POST['titre_f'])) {
                 $titre_f = addslashes($_POST['titre_f']);
@@ -20,9 +19,8 @@
         $sql = $pdocv->query("SELECT * FROM t_formations WHERE id_formation = '$id_formation'");
         $ligne_formation = $sql->fetch();
 
-
-
 ?>
+
 <?php require '../admin/navigation.inc/haut.inc.php'; ?>
 
         <div id="page-wrapper">
@@ -85,21 +83,5 @@
             <!-- /.container-fluid -->
 
         </div>
-        <!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-
-    <script> CKEDITOR.replace( 'description_f' ); </script>
-
-</body>
-
-</html>
+<?php require "../admin/navigation.inc/bas.inc.php"; ?>

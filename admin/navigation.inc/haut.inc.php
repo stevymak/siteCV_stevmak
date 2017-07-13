@@ -134,7 +134,7 @@ echo $date ." ". $heure;?></a>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo " " . $ligne['prenom'].' '.$ligne['nom'] ; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profil.php"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="profil.php"><i class="fa fa-fw fa-user"></i> Profil</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -156,13 +156,13 @@ echo $date ." ". $heure;?></a>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de Bord </a>
                     </li>
                     <li>
-                        <a href="competences.php"><i class="fa fa-fw fa-table"></i> Competences</a>
+                        <a href="competences.php"><i class="fa fa-fw fa-table"></i> Compétences</a>
                     </li>
                     <li>
-                        <a href="formations.php"><i class="glyphicon glyphicon-tower"></i> Formations </a>
+                        <a href="formations.php"><i class="fa fa-fw fa-table"></i> Formations </a>
                     </li>
                     <li>
-                        <a href="experiences.php"><i class="fa fa-fw fa-table"></i> Experiences </a>
+                        <a href="experiences.php"><i class="fa fa-fw fa-table"></i> Expériences </a>
                     </li>
                     <li>
                         <a href="loisirs.php"><i class="glyphicon glyphicon-tower"></i> Loisirs </a>
