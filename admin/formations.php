@@ -109,7 +109,7 @@ if (isset($_GET['id_formation'])){
                         <br>
                         <label for="description_f">Description</label>
                         <br>
-                        <textarea class="ckeditor" name="description_f" id="description_f" rows="8" cols="40"></textarea>
+                        <textarea name="description_f" id="description_f" rows="8" cols="40"></textarea>
                         <input hidden name="id_formation" value="<?php echo
                         $ligne_formation['id_formation']; ?>">
 

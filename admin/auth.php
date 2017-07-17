@@ -13,11 +13,6 @@ if(isset($_GET['action']) && $_GET['action'] == "deconnexion") // si l'internaut
 
 <?php
 
-/*
-Page: auth.php
-*/
-session_start(); // à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
-
 $msg_authentification_erreur='';
 
 if(isset($_POST['connexion'])) {

@@ -1,7 +1,6 @@
 <?php require '../connexion/connexion.php'; ?>
 <?php
 
-    session_start();
         if (isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté') {
                 $id_utilisateur=$_SESSION['id_utilisateur'];
                 $prenom=$_SESSION['prenom'];
@@ -235,7 +234,7 @@ echo $date ." ". $heure;?></a>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge"></div>
-                                        <div>Competences</div>
+                                        <div>Compétences</div>
                                     </div>
                                 </div>
                             </div>

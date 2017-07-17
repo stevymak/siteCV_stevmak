@@ -68,7 +68,7 @@
                             <br>
                             <label for="description_f">Description</label>
                             <br>
-                            <textarea id="description_f" type="text" name="description_f" class="ckeditor form-control" value="<?php
+                            <textarea id="description_f" type="text" name="description_f" class="form-control" rows="8" cols="40" value="<?php
                             echo $ligne_formation['description_f']; ?>"></textarea>
                             <input hidden name="id_formation" value="<?php echo
                             $ligne_formation['id_formation']; ?>">
